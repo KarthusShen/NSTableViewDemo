@@ -12,6 +12,7 @@
 
 @property (weak) IBOutlet NSImageView *iconImage;
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (weak) IBOutlet NSTextField *labelSave;
 
 - (void)setText: (NSString *)text;
 
