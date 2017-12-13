@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     NSClickGestureRecognizer * click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(handleClickGesture:)];
     [self addGestureRecognizer:click];
 }
@@ -26,18 +28,18 @@
     CGPoint pt = [click locationInView:self];
     NSLog(@"point: %f, %f",pt.x, pt.y);
     
-    if (CGRectContainsPoint(self.iconImage.frame, pt))
-    {
-        NSLog(@"click on a iconImage.");
-    }
-    else if (CGRectContainsPoint(self.textView.frame, pt))
-    {
-        NSLog(@"click on a textview.");
-    }
-    else
-    {
-        NSLog(@"click on something else.");
-    }
+//    if (CGRectContainsPoint(self.iconImage.frame, pt))
+//    {
+//        NSLog(@"click on a iconImage.");
+//    }
+//    else if (CGRectContainsPoint(self.textView.frame, pt))
+//    {
+//        NSLog(@"click on a textview.");
+//    }
+//    else
+//    {
+//        NSLog(@"click on something else.");
+//    }
 }
 
 @end
