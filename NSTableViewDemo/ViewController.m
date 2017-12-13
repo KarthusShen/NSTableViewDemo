@@ -15,8 +15,6 @@
 
 @property (weak) IBOutlet NSTableView *tableView;
 
-- (void)handleClickGesture:(NSClickGestureRecognizer *)click;
-
 @end
 
 @implementation ViewController
@@ -25,10 +23,6 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    
-//    NSClickGestureRecognizer * click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(handleClickGesture:)];
-//    [self.view addGestureRecognizer:click];
-    
     NSNib *nib = [[NSNib alloc] initWithNibNamed:NSStringFromClass([KTTableRowView class]) bundle:nil];
     [self.tableView registerNib:nib forIdentifier:KTTableRowViewIdentifier];
     
@@ -41,11 +35,6 @@
     // Update the view, if already loaded.
 }
 
-- (void)handleClickGesture:(NSClickGestureRecognizer *)click
-{
-    NSPoint pt = [click locationInView:self.view];
-    NSLog(@"point: %f, %f",pt.x, pt.y);
-}
 
 #pragma -mark NSTableViewDataSource
 
@@ -69,9 +58,5 @@
     return 100;
 }
 
-//- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
-//{
-//    return NO;
-//}
 
 @end

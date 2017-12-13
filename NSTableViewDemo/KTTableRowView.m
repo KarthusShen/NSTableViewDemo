@@ -8,6 +8,17 @@
 
 #import "KTTableRowView.h"
 
+@interface KTTableRowView()
+
+@property (weak) IBOutlet NSImageView *iconImage;
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (weak) IBOutlet NSTextField *labelSave;
+@property (weak) IBOutlet NSScrollView *borderedTextView;
+
+- (void)handleClickGesture:(NSClickGestureRecognizer *)click;
+
+@end
+
 @implementation KTTableRowView
 
 - (void)awakeFromNib
@@ -26,20 +37,24 @@
 - (void)handleClickGesture:(NSClickGestureRecognizer *)click
 {
     CGPoint pt = [click locationInView:self];
-    NSLog(@"point: %f, %f",pt.x, pt.y);
+    //NSLog(@"point: %f, %f",pt.x, pt.y);
     
-//    if (CGRectContainsPoint(self.iconImage.frame, pt))
-//    {
-//        NSLog(@"click on a iconImage.");
-//    }
-//    else if (CGRectContainsPoint(self.textView.frame, pt))
-//    {
-//        NSLog(@"click on a textview.");
-//    }
-//    else
-//    {
-//        NSLog(@"click on something else.");
-//    }
+    if (CGRectContainsPoint(self.iconImage.frame, pt))
+    {
+        NSLog(@"click on a iconImage.");
+    }
+    else if (CGRectContainsPoint(self.borderedTextView.frame, pt))
+    {
+        NSLog(@"click on a textview.");
+    }
+    else if (CGRectContainsPoint(self.labelSave.frame, pt))
+    {
+        NSLog(@"click on a label");
+    }
+    else
+    {
+        NSLog(@"click on something else.");
+    }
 }
 
 @end

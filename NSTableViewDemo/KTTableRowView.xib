@@ -56,6 +56,7 @@
                 </textField>
             </subviews>
             <connections>
+                <outlet property="borderedTextView" destination="2ys-BY-3UD" id="ow5-ua-jIe"/>
                 <outlet property="iconImage" destination="t5h-sy-2IO" id="eGT-iR-DtQ"/>
                 <outlet property="labelSave" destination="yPn-53-MnF" id="T0r-Zh-Xsm"/>
                 <outlet property="textView" destination="1uM-DM-DLx" id="8tu-wu-eS6"/>
